@@ -1,6 +1,8 @@
+-- Find books that are currently borrowed
 SELECT
     br.borrow_id,
 
+--Student Full Name
     CONCAT(
         s.student_first_name,
         ' ',
@@ -31,7 +33,7 @@ SET borrow_return_date = CURRENT_TIMESTAMP
 WHERE borrow_id = 2
     AND borrow_return_date IS NULL;
 
-
+-- View returned books
 SELECT
     br.borrow_id,
 

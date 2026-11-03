@@ -683,7 +683,7 @@ if($section === 'borrow'){
 
     <?php elseif ($section === 'borrow'): ?>
 
-        <h2>Borrow</h2>
+        <h2>Borrow Records</h2>
 
         <p>
             <a href="index.php?section=borrow&action=create">
@@ -692,7 +692,7 @@ if($section === 'borrow'){
         </p>
 
         <?php if ($action=='create'): ?>
-            <h2>Borrow a Book</h2>
+            <h2>Borrow Book</h2>
 
             <form method="POST">
 

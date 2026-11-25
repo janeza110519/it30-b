@@ -328,7 +328,21 @@ try {
         <canvas id="categoryChart" width="400" height="200"></canvas>
     </div>
 
-    <!-- RECENT BORROWS -->
+    <!-- Bar Chart: Borrow Activity -->
+<div class="chart-card">
+    <div class="chart-title">
+        Borrows · last 7 days
+
+        <span>
+            <span class="material-icons">trending_up</span>
+            activity
+        </span>
+    </div>
+
+    <canvas id="borrowChart" width="400" height="200"></canvas>
+</div>
+
+<!-- RECENT BORROWS -->
 <div class="recent-borrows">
     <div class="recent-header">
         <h3>
@@ -364,20 +378,6 @@ try {
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
-</div>
-
-    <!-- Bar Chart: Borrow Activity -->
-<div class="chart-card">
-    <div class="chart-title">
-        Borrows · last 7 days
-
-        <span>
-            <span class="material-icons">trending_up</span>
-            activity
-        </span>
-    </div>
-
-    <canvas id="borrowChart" width="400" height="200"></canvas>
 </div>
 
 </div>

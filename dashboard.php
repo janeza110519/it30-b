@@ -19,60 +19,10 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-<body>
-
-<?php include 'includes/navbar.php' ?>
-
-<div class="dashboard">
-<div class="stats-grid">
-    <div class="stat-card">
-        <div class="stat-header">
-            <span class="stat-label">Students</span>
-            <span class="material-icons">school</span>
-        </div>
-        <div class="stat-number"><?= $studentCount ?></div>
-        <div class="stat-sub">enrolled</div>
-    </div>
-
-    <div class="stat-card">
-        <div class="stat-header">
-            <span class="stat-label">Books</span>
-            <span class="material-icons">auto_stories</span>
-        </div>
-        <div class="stat-number"><?= $bookCount ?></div>
-        <div class="stat-sub">in collection</div>
-    </div>
-
-    <div class="stat-card">
-        <div class="stat-header">
-            <span class="stat-label">Borrow records</span>
-            <span class="material-icons">history</span>
-        </div>
-        <div class="stat-number"><?= $totalBorrows ?></div>
-        <div class="stat-sub">all time</div>
-    </div>
-
-    <div class="stat-card">
-        <div class="stat-header">
-            <span class="stat-label">Active loans</span>
-            <span class="material-icons">pending_actions</span>
-        </div>
-        <div class="stat-number"><?= $activeBorrows ?></div>
-        <div class="stat-sub">not returned</div>
-    </div>
-</div>
-</div>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -311,8 +261,48 @@ try {
         }
     </style>
 </head>
-    
+<body>
 
+<?php include 'includes/navbar.php' ?>
+
+<div class="dashboard">
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-header">
+            <span class="stat-label">Students</span>
+            <span class="material-icons">school</span>
+        </div>
+        <div class="stat-number"><?= $studentCount ?></div>
+        <div class="stat-sub">enrolled</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <span class="stat-label">Books</span>
+            <span class="material-icons">auto_stories</span>
+        </div>
+        <div class="stat-number"><?= $bookCount ?></div>
+        <div class="stat-sub">in collection</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <span class="stat-label">Borrow records</span>
+            <span class="material-icons">history</span>
+        </div>
+        <div class="stat-number"><?= $totalBorrows ?></div>
+        <div class="stat-sub">all time</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <span class="stat-label">Active loans</span>
+            <span class="material-icons">pending_actions</span>
+        </div>
+        <div class="stat-number"><?= $activeBorrows ?></div>
+        <div class="stat-sub">not returned</div>
+    </div>
+</div>
 <!-- CHARTS -->
 <div class="charts-grid">
 
@@ -340,6 +330,7 @@ try {
     </div>
 
     <canvas id="borrowChart" width="400" height="200"></canvas>
+</div>
 </div>
 
 <!-- RECENT BORROWS -->
@@ -379,8 +370,13 @@ try {
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
+</div>
+
 
 </div>
+</div>
+
+
 </body>
 
 <script>
@@ -449,7 +445,6 @@ try {
         });
 
         // ---------- DOUGHNUT: BOOKS BY CATEGORY ----------
-
     // ---------- BAR: BORROWS LAST 7 DAYS ----------
 
 const borrowCtx = document
@@ -529,4 +524,4 @@ new Chart(borrowCtx, {
 });
     })();
 </script>
-</html>
+</html> 
